@@ -1,0 +1,1 @@
+Nov 10 – Setup done: Python environment, libraries, folders. Next: pick races.
