@@ -3,6 +3,7 @@ anyio==4.16.0
 appnope==1.0.0
 asttokens==3.0.2
 attrs==26.1.0
+beautifulsoup4==4.15.0
 certifi==2026.10.23
 charset-normalizer==3.5.2
 click==8.5.1
@@ -59,6 +60,7 @@ requests==2.34.2
 rpds-py==2026.9.1
 scikit-learn==1.9.1
 scipy==1.18.1
+soupsieve==4.1
 stack-data==0.6.3
 starlette==1.10.0
 statsmodels==0.15.0
