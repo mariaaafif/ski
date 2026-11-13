@@ -1,0 +1,36 @@
+# Data
+
+## Source
+Results of every women's FIS Giant Slalom of the 2025–26 season, scraped from fis-ski.com
+with the notebooks in `notebooks/`. Collected Nov 2026.
+
+## Files
+- `raw/race_ids.csv`: the 428 race IDs found on the FIS calendar (women, GS, FIS category, season 2026)
+- `raw/results.csv`: one row per skier per race: 18,429 rows from 351 races
+- `raw/race_*.html`: saved copies of each results page (kept on my computer only, not on GitHub)
+
+## Columns in results.csv
+| Column | Meaning |
+|---|---|
+| raceid | FIS internal ID of the race (used in the results page URL) |
+| rank | Final position (empty if the skier did not finish) |
+| bib | Start number in run 1 |
+| fis_code | Skier's unique FIS ID |
+| name | Skier's name |
+| birth_year | Year of birth |
+| nation | Country code (e.g. NOR, ITA) |
+| run1 | Run 1 time in seconds |
+| run2 | Run 2 time in seconds |
+| total | Total time in seconds (run 1 + run 2) |
+| diff | Gap to the winner, as shown on the page |
+| race_points | FIS points earned in this race. Calculated from the result|
+| points_2 | Second points column shown on the page (to check what it is) |
+| status | Finished, Did not finish 1st run, Did not finish 2nd run, Did not start 1st run, etc. |
+| pct_behind | How far behind the winner, in percent: (total / winner's total − 1) × 100 |
+
+## Data checks
+- 77 of the 428 races returned no results: 75 were cancelled (no skiers on the page),
+  2 had only 2 skiers and no points, so they were left out on purpose.
+- Skiers who finished run 1 but not run 2 are kept with their run 1 time (752 rows),
+  so crashed skiers aren't dropped, which would bias the data.
+- Pre-race FIS points are not in this file yet: they come from the FIS points lists (next step).
